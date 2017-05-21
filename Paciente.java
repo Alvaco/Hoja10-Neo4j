@@ -11,7 +11,7 @@ public class Paciente{
     private int edad;
     private String Contrasena;
     
-    public Estudiante(String nombre,String Doctor,int edad,String Contrasena){ //revisen esta//
+    public Paciente(String nombre,String Doctor,int edad,String Contrasena){ //revisen esta//
         this.nombre=nombre;
         this.edad=edad;
         this.Doctor=Doctor;
