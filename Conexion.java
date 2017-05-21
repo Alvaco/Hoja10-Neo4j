@@ -32,7 +32,7 @@ public class Conexion {
     
     public void crearHospital(Hospital r){
         try{
-            stmt.executeUpdate("CREATE("+r.getNombre()+":Hospital{name:'"+r.getNombre()+"',tipo:'"+r.getTipo()+"',ubicacion:'"+r.getUbicacion()+"',medicamento:'"+r.getMedicamento()+"'})");
+            stmt.executeUpdate("CREATE("+r.getNombre()+":Hospital{name:'"+r.getNombre()+"',tipo:'"+r.getTipo()+"',ubicacion:'"+r.getUbicacion()+"',doctoresaservicio:'"+r.getDoctoresaservicio()+"'})");
         }
         catch (SQLException e) {
             e.printStackTrace();
