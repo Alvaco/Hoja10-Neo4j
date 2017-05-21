@@ -22,7 +22,7 @@ public class Conexion {
     
     public void crearPaciente(Paciente e1){
         try{
-            stmt.executeUpdate("CREATE(" +e1.getNombre()+ ":Paciente{name:'" +e1.getNombre()+ "',medicamento:'" +e1.getMedicamento()+ "',edad:'" +e1.getEdad()+"'})");
+            stmt.executeUpdate("CREATE(" +e1.getNombre()+ ":Paciente{name:'" +e1.getNombre()+ "',doctor:'" +e1.getDoctor()+ "',edad:'" +e1.getEdad()+"'})");
         }
         catch (SQLException e) {
             e.printStackTrace();
