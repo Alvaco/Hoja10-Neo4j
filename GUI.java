@@ -1,7 +1,4 @@
-package mema2.pkg0;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -33,11 +30,11 @@ public class Gui {
 	private JPanel pCont;
 	private JPanel paginaPrincipal;
 	private JPanel AgregarUsuario;
-	private JPanel NuevoRestaurante;
+	private JPanel NuevoHospital;
 	private JPanel Recomend;
 	
-	private String EstudianteActualUsuario;
-        private Estudiante EstudianteFijo;
+	private String PacienteActualUsuario;
+        private Estudiante PacienteFijo;
 	
 
 	
@@ -55,8 +52,8 @@ public class Gui {
 	void initialize() {
                 Conexion miCon=new Conexion();
                 
-                EstudianteFijo=new Estudiante(EstudianteActualUsuario,"b",2,"m");
-                miCon.Recomendar(EstudianteFijo);
+                PacienteFijo=new Paciente(PacienteActualUsuario,"b",2,"m");
+                miCon.Recomendar(PacienteFijo);
                 
             
 		frame = new JFrame("GUI Proyecto");
@@ -73,7 +70,7 @@ public class Gui {
 		paginaPrincipal.setLayout(null);
 		
 		
-		JLabel lblNewLabel = new JLabel("Proyecto: Woods - Dieter - Jerry");
+		JLabel lblNewLabel = new JLabel("Proyecto: Ana lucia Diaz -Christopher Sandoval  - Maria Fernanda R. - Alejandro Vasquez");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblNewLabel.setBounds(261, 58, 455, 73);
 		paginaPrincipal.add(lblNewLabel);
@@ -124,12 +121,12 @@ public class Gui {
 		lblNombre.setBounds(91, 165, 106, 38);
 		AgregarUsuario.add(lblNombre);
 		
-		JLabel lblEdad = new JLabel("Edad");
+		JLabel lblEdad = new JLabel("especializacion");
 		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblEdad.setBounds(91, 226, 106, 38);
 		AgregarUsuario.add(lblEdad);
 		
-		JLabel lblCarrera = new JLabel("Carrera");
+		JLabel lblCarrera = new JLabel("Paciente");
 		lblCarrera.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblCarrera.setBounds(91, 307, 106, 38);
 		AgregarUsuario.add(lblCarrera);
@@ -154,9 +151,9 @@ public class Gui {
 		btnAgregarlo.setBounds(569, 173, 183, 59);
 		AgregarUsuario.add(btnAgregarlo);
                 
-                JButton btnAgregarAmigo=new JButton("Friend");
-                btnAgregarAmigo.setFont(new Font("Tahoma", Font.PLAIN, 16));
-                btnAgregarAmigo.setBounds(569,385,151,38);
+                JButton btnAgregarAmigo=new JButton("Paciente");
+                btnAgregarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 16));
+                btnAgregarPaciente.setBounds(569,385,151,38);
                 AgregarUsuario.add(btnAgregarAmigo);
 		
 		JButton btnAtras = new JButton("Atras");
@@ -164,63 +161,58 @@ public class Gui {
 		btnAtras.setBounds(209, 385, 151, 38);
 		AgregarUsuario.add(btnAtras);
 		
-		NuevoRestaurante = new JPanel();
-		pCont.add(NuevoRestaurante, "3");
-		NuevoRestaurante.setLayout(null);
+		NuevoHospital = new JPanel();
+		pCont.add(NuevoHospital, "3");
+		NuevoHospital.setLayout(null);
 		
-		JLabel lblNewLabel_4 = new JLabel("Nuevo Restaurante");
+		JLabel lblNewLabel_4 = new JLabel("Nuevo Hospital");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblNewLabel_4.setBounds(302, 68, 347, 78);
-		NuevoRestaurante.add(lblNewLabel_4);
+		NuevoHospital.add(lblNewLabel_4);
 		
-		JLabel lblNombre_1 = new JLabel("Nombre");
+		JLabel lblNombre_1 = new JLabel("doctoresaservicio");
 		lblNombre_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNombre_1.setBounds(99, 165, 103, 35);
-		NuevoRestaurante.add(lblNombre_1);
+		NuevoHospital.add(lblNombre_1);
 		
 		JLabel lblTipo = new JLabel("Tipo");
 		lblTipo.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblTipo.setBounds(99, 219, 103, 35);
-		NuevoRestaurante.add(lblTipo);
-		
-		JLabel lblMa = new JLabel("Mayormente Consumido");
-		lblMa.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblMa.setBounds(99, 278, 188, 35);
-		NuevoRestaurante.add(lblMa);
+		NuevoHospital.add(lblTipo);
 		
 		JLabel lblUbicacion = new JLabel("Ubicacion");
 		lblUbicacion.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblUbicacion.setBounds(99, 337, 103, 35);
-		NuevoRestaurante.add(lblUbicacion);
+		NuevoHospital.add(lblUbicacion);
 		
 		textField_5 = new JTextField();
 		textField_5.setBounds(316, 172, 323, 22);
-		NuevoRestaurante.add(textField_5);
+		NuevoHospital.add(textField_5);
 		textField_5.setColumns(10);
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
 		textField_6.setBounds(316, 226, 323, 22);
-		NuevoRestaurante.add(textField_6);
+		NuevoHospital.add(textField_6);
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
 		textField_7.setBounds(316, 285, 323, 22);
-		NuevoRestaurante.add(textField_7);
+		NuevoHospital.add(textField_7);
 		
 		textField_8 = new JTextField();
 		textField_8.setColumns(10);
 		textField_8.setBounds(316, 344, 323, 22);
-		NuevoRestaurante.add(textField_8);
+		NuevoHospital.add(textField_8);
 		
 		JButton btnNewButton_2 = new JButton("Agregar");
 		btnNewButton_2.setBounds(684, 171, 123, 201);
-		NuevoRestaurante.add(btnNewButton_2);
+		NuevoHospital.add(btnNewButton_2);
 		
 		JButton btnAtras_1 = new JButton("Atras");
 		btnAtras_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnAtras_1.setBounds(316, 400, 115, 41);
-		NuevoRestaurante.add(btnAtras_1);
+		NuevoHospital.add(btnAtras_1);
 		
 		Recomend = new JPanel();
 		pCont.add(Recomend, "4");
@@ -249,20 +241,20 @@ public class Gui {
 		textField_11.setBounds(115, 279, 651, 34);
 		Recomend.add(textField_11);
 		
-		JButton btnNewButton_3 = new JButton("Agregar Amigo");
+		JButton btnNewButton_3 = new JButton("Agregar Paciente");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnNewButton_3.setBounds(364, 342, 164, 34);
 		Recomend.add(btnNewButton_3);
 		
-		JButton btnAgregarRestaurante = new JButton("Agregar Restaurante");
-		btnAgregarRestaurante.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnAgregarRestaurante.setBounds(211, 405, 186, 34);
-		Recomend.add(btnAgregarRestaurante);
+		JButton btnAgregarRestaurante = new JButton("Agregar Hospital");
+		btnAgregarHospital.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnAgregarHospital.setBounds(211, 405, 186, 34);
+		Recomend.add(btnAgregarHospital);
 		
-		JButton btnQuitarRestaurante = new JButton("Quitar Restaurante");
-		btnQuitarRestaurante.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnQuitarRestaurante.setBounds(473, 405, 186, 34);
-		Recomend.add(btnQuitarRestaurante);
+		JButton btnQuitarHospital = new JButton("Quitar Hospital");
+		btnQuitarHospital.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnQuitarHospital.setBounds(473, 405, 186, 34);
+		Recomend.add(btnQuitarHospital);
 		
 		cl.show(pCont, "1");
                 
@@ -272,8 +264,8 @@ public class Gui {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(pCont, "4");
-                                EstudianteActualUsuario=textFieldUsuario.getText();
-                                String[] miLista=miCon.Recomendar(EstudianteFijo);
+                                PacienteActualUsuario=textFieldUsuario.getText();
+                                String[] miLista=miCon.Recomendar(PacienteFijo);
                                 textField_9.setText(miLista[0]);
                                 textField_10.setText(miLista[1]);
                                 textField_11.setText(miLista[2]);
@@ -288,20 +280,20 @@ public class Gui {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(pCont, "2");
-                                btnAgregarAmigo.setEnabled(false);
+                                btnAgregarPaciente.setEnabled(false);
                                 btnAgregarlo.setEnabled(true);
                                 textField_3.setEditable(true);
                                 textField_4.setEditable(true);
 			}		
 	});
                 
-                btnAgregarAmigo.addActionListener(new ActionListener(){
+                btnAgregarPaciente.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(pCont, "2");
-                                Estudiante tempE=new Estudiante(textField_2.getText(),"a",1,"f");
-                                Estudiante tempE2=new Estudiante(EstudianteActualUsuario,"b",2,"m");
-                                miCon.crearAmigo(tempE, tempE2);
+                                Paciente tempE=new Paciente(textField_2.getText(),"a",1,"f");
+                                Paciente tempE2=new Paciente(PacienteActualUsuario,"b",2,"m");
+                                miCon.crearPaciente(tempE, tempE2);
 			}		
 	});
                 
@@ -313,8 +305,8 @@ public class Gui {
                             String tempCarrera=textField_4.getText();
                             int tempEdadInt=Integer.parseInt(tempEdad);
                             String contrasena="4568";
-                            Estudiante tempEstudiante=new Estudiante(tempNombre,tempCarrera,tempEdadInt,contrasena);
-                            miCon.crearEstudiante(tempEstudiante);
+                            Estudiante tempPaciente=new Paciente(tempNombre,tempDoctor,tempEdadInt,contrasena);
+                            miCon.crearPaciente(tempPaciente);
 			}		
 	});
 		
@@ -350,14 +342,14 @@ public class Gui {
                             String tempTipo=textField_6.getText();
                             String tempMasCon=textField_7.getText();
                             String ubicacion=textField_8.getText();
-                            Restaurante tempRes=new Restaurante(tempNombre,ubicacion,tempTipo,tempMasCon);
-                            miCon.crearRestaurante(tempRes);
-                            Estudiante tempE2=new Estudiante(EstudianteActualUsuario,"b",2,"m");
+                            Hospital tempRes=new Hospital(tempNombre,ubicacion,tempTipo,tempDoctoresaservicio);
+                            miCon.crearHospital(tempRes);
+                            Paciente tempE2=new Paciente(PacienteActualUsuario,"b",2,"m");
                             miCon.crearCliente(tempE2, tempRes);
 			}		
 	});
 		
-		btnAgregarRestaurante.addActionListener(new ActionListener(){
+		btnAgregarHospital.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(pCont, "3");
@@ -365,7 +357,7 @@ public class Gui {
 			}		
 	});
 		
-		btnQuitarRestaurante.addActionListener(new ActionListener(){
+		btnQuitarHospital.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cl.show(pCont, "3");
