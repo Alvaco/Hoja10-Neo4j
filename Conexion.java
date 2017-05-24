@@ -6,7 +6,7 @@ public class Conexion {
     private Connection con;
     private Statement stmt;
     private final String USER="neo4j";
-    private final String PASSWORD="neo4j1";
+    private final String PASSWORD="neo4j1"; //sino funciona utilizar almomia16
     static final String URL="jdbc:neo4j:bolt://localhost";
     
     //constructor
