@@ -22,7 +22,7 @@ public class Conexion {
     
     public void crearPaciente(Paciente e1){
         try{
-            stmt.executeUpdate("CREATE(" +e1.getNombre()+ ":Paciente{name:'" +e1.getNombre()+ "',doctor:'" +e1.getDoctor()+ "',edad:'" +e1.getEdad()+"'})");
+            stmt.executeUpdate("CREATE(" +e1.getNombre()+ ":Paciente{name:'" +e1.getNombre()+ "',enfermedad:'" +e1.getEnfermedad()+ "',edad:'" +e1.getEdad()+"'})");
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -30,18 +30,18 @@ public class Conexion {
     }
     
     
-    public void crearHospital(Hospital r){
+    public void crearDoctor(Doctor r){
         try{
-            stmt.executeUpdate("CREATE("+r.getNombre()+":Hospital{name:'"+r.getNombre()+"',tipo:'"+r.getTipo()+"',ubicacion:'"+r.getUbicacion()+"',doctoresaservicio:'"+r.getDoctoresaservicio()+"'})");
+            stmt.executeUpdate("CREATE("+r.getNombre()+":Especialidad{name:'"+r.getEspecialidad()+"',numerotel:'"+r.getnumerotel()+"',ubicacion:'"+r.getUbicacion()+"',horario:'"+r.gethorario()+"'})");
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
     }
     
-    public void crearDoctor(Paciente e1, Hospital r){
+    public void crearHospital(Paciente e1, Doctor r){
         try{
-            stmt.executeUpdate("MATCH (x:Paciente {name:'"+ e1.getNombre()+"'})MATCH (y:Hospital{name:'"+r.getNombre()+"'})"+"MERGE (x)-[:Medicamento]->(y)");
+            stmt.executeUpdate("MATCH (x:Paciente {name:'"+ e1.getNombre()+"'})MATCH (y:Doctor{name:'"+r.getDoctor()+"'})"+"MERGE (x)-[:Medicamento]->(y)");
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -56,9 +56,9 @@ public class Conexion {
         }
     }
     
-    public void deleteHospital(Restaurante r1){
+    public void deleteDoctor(Doctor r1){
         try {
-            stmt.executeUpdate("MATCH (x:Hospital{name:'"+r1.getNombre()+"'}) detach delete x");
+            stmt.executeUpdate("MATCH (x:Doctor{name:'"+r1.getNombre()+"'}) detach delete x");
         } catch (SQLException e) {
             e.printStackTrace();
         }
