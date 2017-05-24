@@ -57,12 +57,11 @@ public class Conexion {
     }
     
     public void deleteDoctor(Doctor r1){
-        try {
+-        try {
             stmt.executeUpdate("MATCH (x:Doctor{name:'"+r1.getNombre()+"'}) detach delete x");
-        } catch (SQLException e) {
+-        } catch (SQLException e) {
             e.printStackTrace();
-        }
-    }
+        }    }
     
     public void crearPacienter(Paciente e1,Paciente e2){
         try{
@@ -83,21 +82,21 @@ public class Conexion {
             e.printStackTrace();
         }
     }
-    
+    //recomendar doctores a pacientes
     public String[] Recomendar(Paciente e1){
         String [] respuesta=new String[3];
         String[] res=new String[1000];
-        String[] totalHospitales=new String[1000];
+        String[] totalDoctores=new String[1000];
         try{
-            ResultSet rs = stmt.executeQuery("MATCH (Pacientes{name:'"+e1.getNombre()+"'})-[rel:pacientesr]-(pacientesr) return Pacientesr");
+            ResultSet rs = stmt.executeQuery("MATCH (Doctor{name:'"+e1.getNombre()+"'})-[rel:doctorr]-(doctorr) return Doctorr");
             int i=0;
             while (rs.next()){
-                Map map = (Map)rs.getObject("Pacientesr");
+                Map map = (Map)rs.getObject("Doctoresr");
                 String s = map.get("name").toString();
                 System.out.println(s);
                 res[i]=s;
                     //tomando los restaurantes
-                    ResultSet tesRest=stmt.executeQuery("MATCH (Paciente{name:'"+s+"'})-[rel:Doctor]-(Hospital) return Hospital");
+                    ResultSet tesRest=stmt.executeQuery("MATCH (Doctor{name:'"+s+"'})-[rel:Doctor]-(Hospital) return Hospital");
                     while(tesRest.next()){
                         Map tempMap=(Map)tesRest.getObject("Hospital");
                         String t=tempMap.get("name").toString();
