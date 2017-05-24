@@ -56,7 +56,7 @@ public class Gui {
                 miCon.Recomendar(PacienteFijo);
                 
             
-		frame = new JFrame("GUI Proyecto");
+		frame = new JFrame("GUI Hoja10");
 		frame.setBounds(100, 100, 885, 545);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
